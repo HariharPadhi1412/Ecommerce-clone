@@ -5,10 +5,9 @@ from math import ceil
 # Create your views here.
 
 def index(request):
-    #products = Product.objects.all()
    
     all_products = []
-    product_category = Product.objects.values('category','product_id')
+    product_category = Product.objects.values('category','id')
     product_category_set = {item['category'] for item in product_category}
 
     for categorys in product_category_set:
